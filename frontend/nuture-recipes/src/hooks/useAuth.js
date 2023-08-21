@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import useFlashMessage from "./useFlashMessage";
 
 // Api
 import api from "../utils/api";
 
 const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const { setFlashMessage } = useFlashMessage();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,9 +18,6 @@ const useAuth = () => {
   }, []);
 
   const register = async (user) => {
-    let msgText = "Cadastro realizado com sucesso!";
-    let msgType = "success";
-
     try {
       const data = await api.post("/users/register", user).then((response) => {
         return response.data;
@@ -30,17 +25,11 @@ const useAuth = () => {
 
       await authUser(data);
     } catch (error) {
-      msgText = error.response.data.message;
-      msgType = "error";
+      console.log(error);
     }
-
-    setFlashMessage(msgText, msgType);
   };
 
   const login = async (user) => {
-    let msgText = "Login realizado com sucesso!";
-    let msgType = "success";
-
     try {
       const data = await api.post("/users/login", user).then((response) => {
         return response.data;
@@ -48,11 +37,8 @@ const useAuth = () => {
 
       await authUser(data);
     } catch (error) {
-      msgText = error.response.data.message;
-      msgType = "error";
+      console.log(error);
     }
-
-    setFlashMessage(msgText, msgType);
   };
 
   const authUser = async (data) => {
