@@ -13,9 +13,10 @@ module.exports = class RecipeController {
       preparationMode,
       level,
       preparationTime,
+      image
     } = req.body;
 
-    const image = req.files;
+    // const image = req.files;
 
     if (
       !name &&
