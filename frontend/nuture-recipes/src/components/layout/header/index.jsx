@@ -33,7 +33,7 @@ const Menu = () => {
       >
         <li className="mx-4 my-6 md:my-0">
           <Link
-            to="#"
+            to="/"
             className="text-white text-md hover:text-stone-400 duration-100 whitespace-nowrap"
           >
             Início
@@ -70,7 +70,7 @@ const Menu = () => {
           <>
             <li className="mx-4 my-6 md:my-0">
               <Link
-                to="#"
+                to="/Register"
                 className={`${
                   menuOpen
                     ? "bg-white text-black hover:text-white hover:border-white hover:bg-lime-900"
@@ -83,7 +83,7 @@ const Menu = () => {
 
             <li className="mx-4 my-6 md:my-0">
               <Link
-                to="#"
+                to="/Login"
                 className={`${
                   menuOpen
                     ? "bg-white text-black hover:text-white hover:border-white hover:bg-lime-900"
