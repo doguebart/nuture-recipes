@@ -48,7 +48,7 @@ module.exports = class RecipeController {
     }
 
     for (const ingredient of ingredients) {
-      if (!ingredient.name || !ingredient.qty || !ingredient.unit) {
+      if (!ingredient.name || !ingredient.qty) {
         res.status(422).json({
           message:
             "Preencha todas as informações dos ingredientes antes de continuar!",

@@ -11,7 +11,7 @@ const Recipe = mongoose.model(
         {
           name: { type: String, required: true },
           qty: { type: Number, required: true },
-          unit: { type: String, required: true },
+          unit: { type: String },
         },
       ],
       preparationMode: [
