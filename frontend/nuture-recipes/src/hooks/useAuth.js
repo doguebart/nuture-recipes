@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 // Api
 import api from "../utils/api";
@@ -24,8 +25,9 @@ const useAuth = () => {
       });
 
       await authUser(data);
+      toast.success("Conta criada com sucesso!");
     } catch (error) {
-      console.log(error);
+      toast.error(error.response.data.message);
     }
   };
 
@@ -36,8 +38,9 @@ const useAuth = () => {
       });
 
       await authUser(data);
+      toast.success("Login realizado com sucesso!");
     } catch (error) {
-      console.log(error);
+      toast.error(error.response.data.message);
     }
   };
 
@@ -53,6 +56,7 @@ const useAuth = () => {
     api.headers.authorization = undefined;
 
     navigate("/");
+    toast.info("Logout realizado com sucesso.");
   };
 
   return { isAuthenticated, register, login, logout };

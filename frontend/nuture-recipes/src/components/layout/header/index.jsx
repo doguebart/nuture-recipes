@@ -59,6 +59,14 @@ const Menu = () => {
             </li>
             <li className="mx-4 my-6 md:my-0">
               <Link
+                to="#"
+                className="text-white text-md hover:text-stone-400 duration-100 whitespace-nowrap"
+              >
+                Perfil
+              </Link>
+            </li>
+            <li className="mx-4 my-6 md:my-0">
+              <Link
                 onClick={logout}
                 className="text-white text-md hover:text-stone-400 duration-100 whitespace-nowrap"
               >

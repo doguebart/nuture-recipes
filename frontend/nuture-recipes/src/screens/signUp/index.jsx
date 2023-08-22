@@ -1,5 +1,7 @@
 import { React, useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import Input from "../../components/form/input";
 import Button from "../../components/form/button";
@@ -21,7 +23,8 @@ function Register() {
   };
 
   return (
-    <div className="w-full h-screen flex items-center justify-center p-4">
+    <div className="w-full h-screen flex flex-col items-center justify-center p-4">
+      <ToastContainer />
       <div className="flex flex-col w-full max-h-full">
         <h2 className="text-xl font-medium mb-5">Entrar</h2>
 
@@ -56,7 +59,7 @@ function Register() {
           />
           <Input
             type="password"
-            name="confirmPassword"
+            name="cfPassword"
             onChange={handleChange}
             placeholder="Confirme a Senha"
             className="py-2 px-2 my-2 mb-4 border-2 rounded-sm outline-none border-stone-200 placeholder:text-sm"

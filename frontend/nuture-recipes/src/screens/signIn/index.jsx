@@ -1,5 +1,7 @@
 import { React, useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import Input from "../../components/form/input";
 import Button from "../../components/form/button";
@@ -21,8 +23,9 @@ function Login() {
   };
 
   return (
-    <div className="w-full h-screen flex items-center justify-center p-4">
+    <div className="w-full h-screen flex flex-col items-center justify-center p-4">
       <div className="flex flex-col w-full max-h-full">
+        <ToastContainer position="top-right" />
         <h2 className="text-xl font-medium mb-5">Entrar</h2>
 
         <form className="flex flex-col">

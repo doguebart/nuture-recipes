@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import api from "../../utils/api";
 
 const Home = () => {
@@ -16,6 +19,7 @@ const Home = () => {
 
   return (
     <div className="w-full h-max">
+      <ToastContainer position="top-right" autoClose={5000} />
       <div className="w-full max-h-full p-4 bg-lime-950 text-center md:text-left">
         <h1 className="lg:w-6/12 transform text-white text-3xl md:text-6xl lg:text-8xl w-full md:w-64 font-bold mx-auto md:ml-0">
           Compartilhe a melhor maneira de fazer o seu prato favorito!

@@ -19,14 +19,14 @@ module.exports = class UserController {
 
     if (!name) {
       res.status(422).json({
-        message: "Informe o seu nome antes de continuar!",
+        message: "Informe o seu Nome antes de continuar!",
       });
       return;
     }
 
     if (!email) {
       res.status(422).json({
-        message: "Informe o seu e-mail antes de continuar!",
+        message: "Informe o seu E-mail antes de continuar!",
       });
       return;
     }
@@ -56,7 +56,7 @@ module.exports = class UserController {
 
     if (userExist) {
       res.status(422).json({
-        message: "Este e-mail já esta sendo utilizado!",
+        message: "Este E-mail já esta sendo utilizado!",
       });
       return;
     }
